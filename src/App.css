@@ -1,51 +1,122 @@
 .App {
-	position: absolute;
-  max-width: 1000px;
-  max-height: 1000px;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -40%);
-}
-
-body {
-	margin: 0;
-	background: linear-gradient(45deg, #49a09d, #5f2c82);
-	font-family: sans-serif;
-	font-weight: 100;
-}
-
-h1 {
-  text-align: center;
-}
-
-input {
-  width: 200px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-table {
-	width: 800px;
-	border-collapse: collapse;
-	overflow: hidden;
-	box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
-
-th,
-td {
-	padding: 15px;
-	background-color: #575fcf;
-  border: 10px solid #ccc;
-
-
-}
-thead {
-	th {
-		background-color:#5f27cd;
-	}
-}
-@media (max-width: 768px) {
-  table {
-    font-size: 14px;
+	text-align: center;
+	
   }
-}
+  
+  nav ul {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	padding: 2rem;
+	background-color: #333;
+  }
+  
+  nav li {
+	margin-right: 0rem;
+	
+  }
+  
+  nav a {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+  }
+  
+  .APP {
+	padding: 2rem;
+  }
+  
+  
+  
+  .name {
+	padding: 2rem;
+	display: flex;
+	justify-content: flex-end; 
+	background-color:slategrey;
+  }
+  
+  .back-button {
+	display: block;
+	margin-top: 1rem;
+  }
+
+  .images {
+	max-width: 300px;
+	height: auto;
+  }
+  
+
+
+  
+  
+  .img {
+	padding: 2rem;
+	background-color:slategrey;
+  }
+  
+  .use{
+	display: flex;
+	flex-wrap: wrap;
+
+	margin-top: 1rem;
+  }
+  
+  
+  
+  .show {
+	
+	padding: 0.5rem;
+  }
+  
+  .show img {
+	max-width: 900px;
+	height: 400px;
+  }
+  
+  .show-image {
+	transition: transform 10ms;
+	
+
+  }
+  
+  .show-image:hover {
+	transform: scale(1.05);
+  }
+  .booking-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 20px;
+  }
+  
+  .form-group {
+	margin-bottom: 15px;
+  }
+  
+  label {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 5px;
+  }
+  
+  input {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	outline: none;
+  }
+  
+  button {
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	top:'-540px';
+
+  }
+  
+  

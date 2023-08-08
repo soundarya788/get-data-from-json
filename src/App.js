@@ -1,67 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import axios from "axios";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import ShowList from './component/ShowList';
+import ShowDetail from './component/ShowDetail';
+import BookingForm from './component/BookingForm';
 import './App.css';
 
-const App = () => {
-  const [users, setUsers] = useState([]);
-  const [search, setSearch] = useState('');
-
-  const url = "https://jsonplaceholder.typicode.com/users";
-  
-
-  const data = () => {
-    return axios.get(url).then((res) => setUsers(res.data));
-      
-  }
-
-
-  useEffect(() => {
-    data();
-  }, []);
-
-
-  const App = users.filter(
-    (select) =>
-      
-      select.website.toLowerCase().includes(search.toLowerCase())||
-      select.name.toLowerCase().includes(search.toLowerCase())||
-      select.email.toLowerCase().includes(search.toLowerCase())||
-      select.username.toLowerCase().includes(search.toLowerCase())
-      
-  
-  );
-
+function App() {
   return (
-    <div className="App">
-      <h1>Welcome</h1>
-      <input
-        type="text"
-        placeholder="Search"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Website</th>
-          </tr>
-        </thead>
-        <tbody>
-          {App.map((select) => (
-            <tr key={select.id}>
-              <td>{select.name}</td>
-              <td>{select.username}</td>
-              <td>{select.email}</td>
-              <td>{select.website}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <Router>
+      <div className="App">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">TV Show</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<ShowList />} />
+          <Route path="/show/:id" element={<ShowDetail />} />
+          <Route path="/booking/:id" element={<BookingForm />} />
+        </Routes>
+      </div>
+    </Router>
   );
-};
+}
 
 export default App;
+
